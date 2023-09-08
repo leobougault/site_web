@@ -82,10 +82,44 @@
   display: flex;
 }
 
-.portfolio_title {
+.portfolio_title{
+  position: relative;
+  overflow: hidden;
   text-align: center;
+  padding-bottom: 200px;
 }
 
+
+#video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -100;
+}
+
+.portfolio_title video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -100;
+}
+
+.portfolio_title::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -99;
+  background-color: black;
+  opacity: 15%;
+  top: 0;
+  left: 0;
+}
 
 @media screen and (max-width: 996px) {
   .grid-paysages {

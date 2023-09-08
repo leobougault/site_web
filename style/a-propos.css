@@ -1,11 +1,12 @@
 .carre-contenu {
-  border-right: 1px solid #8e86b5;
-  border-bottom: 1px solid #8e86b5;
+  border-right: 1px solid #F6DA99;
+  border-bottom: 1px solid #F6DA99;
   padding: 50px;
   width: 50%;
   margin: auto;
   margin-bottom: 80px;
 }
+
 
 .carre-contenu h2 {
   margin-top: 30px;
@@ -22,6 +23,42 @@
 
 .a-propos-main {
   margin: auto;
+}
+
+.a-propos-main1{
+  position: relative;
+  overflow: hidden;
+}
+
+#video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -100;
+}
+
+.a-propos-main1 video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -100;
+}
+
+.a-propos-main1::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -99;
+  background-color: black;
+  opacity: 15%;
+  top: 0;
+  left: 0;
 }
 
 table {
