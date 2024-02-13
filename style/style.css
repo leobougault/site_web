@@ -80,6 +80,7 @@ a:hover {
 
 .lien-icone {
   margin-left: 10px;
+  width: 50px; 
 }
 
 .lien-icone:hover {
