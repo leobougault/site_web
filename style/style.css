@@ -63,7 +63,7 @@ header::before {
   display: inline-block;
   background: linear-gradient(#F6DA99,#FFD46E );
   color: white;
-  border-radius: 50px;/Users/leobougault/Documents/site_web/site_web/index.html
+  border-radius: 50px;
   padding: 20px 30px;
   transition: transform 400ms;
 }
