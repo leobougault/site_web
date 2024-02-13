@@ -63,7 +63,7 @@ header::before {
   display: inline-block;
   background: linear-gradient(#F6DA99,#FFD46E );
   color: white;
-  border-radius: 50px;
+  border-radius: 50px;/Users/leobougault/Documents/site_web/site_web/index.html
   padding: 20px 30px;
   transition: transform 400ms;
 }
@@ -78,9 +78,10 @@ a:hover {
   transform: scale(1.15);
 }
 
-.lien-icone {
+.lien-icone img {
   margin-left: 10px;
-  width: 50px; 
+  width: 50px;
+  height: 50px;
 }
 
 .lien-icone:hover {
