@@ -69,6 +69,7 @@
   height: 100%;
   object-fit: cover;
   z-index: -100;
+  pointer-events: none; 
 }
 
 .accueil-introduction video {
@@ -241,6 +242,10 @@ input[type='submit'] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .logo-container .logo-text {
+    display: none;
   }
 
   .accueil-introduction div {
