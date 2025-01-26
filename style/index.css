@@ -17,6 +17,33 @@
   margin-bottom: 30px;
 }
 
+
+.logo-container {
+  display: flex; 
+  align-items: center; 
+}
+
+.logo {
+  width: 50px; 
+  height: auto; 
+  margin-right: 0; 
+  margin-right: 20px;
+}
+
+@font-face {
+  font-family: 'Mistrully';
+  src: url('fonts/Mistrully-Ojmd.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.logo-text {
+  font-family: 'Mistrully', sans-serif; 
+  font-size: 20px; 
+  color: #050000; 
+  margin-left: 0; 
+}
 .accueil-photos img {
   width: 33%;
   margin: auto;
@@ -69,7 +96,7 @@
   position: absolute;
   top: 0;
   right: 20px;
-  width: 5%; /* Ajustez la largeur selon la taille de votre GIF */
+  width: 5%; 
 }
 
 .accueil-introduction h1 {
@@ -91,6 +118,39 @@
 .accueil-introduction img {
   width: 40%;
   border-radius: 59% 41% 49% 51% / 53% 30% 70% 47%;
+}
+
+
+/* Conteneur centré */
+.center-content {
+  display: flex;
+  flex-direction: column; /* Empile les éléments (titre + lien) */
+  justify-content: center;
+  align-items: center;
+  height: 45vh; /* Prend toute la hauteur de la page */
+  text-align: center;
+}
+
+/* Titre "empereur tamarin" */
+.title {
+  font-family: 'Mistrully', sans-serif; /* Applique la police Mistrully */
+  font-size: 48px; /* Taille du texte */
+  color: #ffffff; /* Couleur du texte */
+  margin-bottom: 20px; /* Espacement avec le lien */
+}
+
+/* Lien simple */
+.simple-link {
+  font-family: 'Montserrat', sans-serif; /* Police différente pour le lien si souhaité */
+  font-size: 11px; /* Taille du texte */
+  color: #ffffff; /* Couleur du lien */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+  transition: color 0.3s ease; /* Animation de changement de couleur */
+}
+
+.simple-link:hover {
+  color: #F6DA99; /* Couleur au survol */
+  text-decoration: underline; /* Ajoute un soulignement au survol */
 }
 
 
