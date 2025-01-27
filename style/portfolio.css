@@ -21,6 +21,14 @@
   justify-content: center;
 }
 
+@font-face {
+  font-family: 'Mistrully';
+  src: url('fonts/Mistrully-Ojmd.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 #menuDeroulant {
   font-size: 25px;
   font-family: 'Anton', sans-serif;
@@ -92,7 +100,7 @@
 
 #video-bg {
   position: fixed;
-  top: -300px;
+  top: -100px;
   left: 0;
   width: 100%;
   height: 100%;
