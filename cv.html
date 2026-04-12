@@ -5,79 +5,25 @@
     <meta charset="utf-8">
     <title>Resume — empereur tamarin</title>
     <link href="style/style.css" rel="stylesheet">
+    <link href="style/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mistrully&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* ── Fix style.css globals that break white-bg pages ── */
+        main p, main li {
+            color: #444;
         }
-
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: #ffffff;
+        main h2, main h3, main h4 {
             color: #1a1a1a;
         }
 
-        /* ── HEADER (identique au site) ── */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .logo {
-            width: 32px;
-            height: 32px;
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            color: #1a1a1a;
-        }
-
-        nav a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-left: 2rem;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-
-        nav a:hover { opacity: 1; }
-        nav a.active { opacity: 1; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; }
-
-        /* ── HERO ── */
+        /* ── CV layout ── */
         .cv-hero {
-            padding: 10rem 2rem 5rem;
-            max-width: 1100px;
+            padding: 6rem 80px 4rem;
+            max-width: 1300px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -87,46 +33,41 @@
 
         .cv-hero-text h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 400;
             line-height: 1.15;
             letter-spacing: -0.02em;
+            color: #1a1a1a;
             margin-bottom: 1rem;
         }
 
-        .cv-hero-text h1 span {
-            opacity: 0.35;
-        }
+        .cv-hero-text h1 span { opacity: 0.35; }
 
         .cv-hero-text .tagline {
-            font-size: 1rem;
-            opacity: 0.55;
+            font-size: 1rem !important;
+            color: #666 !important;
             line-height: 1.7;
-            max-width: 400px;
+            max-width: 440px;
             margin-bottom: 2rem;
         }
 
-        .cv-hero-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .cv-hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-        .btn-outline {
+        .btn-cv {
             display: inline-block;
             padding: 0.6rem 1.4rem;
             border: 1px solid rgba(0,0,0,0.25);
-            color: #1a1a1a;
-            text-decoration: none;
+            color: #1a1a1a !important;
             font-size: 0.8rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             transition: background 0.2s, border-color 0.2s;
         }
 
-        .btn-outline:hover {
+        .btn-cv:hover {
             background: rgba(0,0,0,0.05);
             border-color: rgba(0,0,0,0.5);
+            color: #1a1a1a !important;
         }
 
         .cv-hero-stats {
@@ -137,56 +78,49 @@
             border: 1px solid rgba(0,0,0,0.08);
         }
 
-        .stat-cell {
-            background: #ffffff;
-            padding: 1.5rem;
-        }
+        .stat-cell { background: #fff; padding: 1.5rem; }
 
         .stat-cell .number {
             font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
             font-weight: 400;
             letter-spacing: -0.03em;
+            color: #1a1a1a;
         }
 
-        .stat-cell .label {
-            font-size: 0.75rem;
-            opacity: 0.45;
+        .stat-cell .stat-label {
+            font-size: 0.75rem !important;
+            color: #aaa !important;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-top: 0.3rem;
         }
 
-        /* ── SECTIONS COMMUNES ── */
+        /* ── Sections ── */
         .cv-section {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 4rem 80px;
             border-top: 1px solid rgba(0,0,0,0.08);
         }
 
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
+        .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem; }
 
         .section-label {
-            font-size: 0.7rem;
+            font-size: 0.7rem !important;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            opacity: 0.35;
+            color: #ccc !important;
         }
 
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.4rem;
             font-weight: 400;
-            letter-spacing: -0.01em;
+            color: #1a1a1a !important;
         }
 
-        /* ── PROJETS ── */
+        /* ── Projects ── */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -195,16 +129,14 @@
         }
 
         .project-card {
-            background: #ffffff;
+            background: #fff;
             padding: 2rem;
             transition: background 0.2s;
             position: relative;
             overflow: hidden;
         }
 
-        .project-card:hover {
-            background: #f7f7f7;
-        }
+        .project-card:hover { background: #f8f8f8; }
 
         .project-card::before {
             content: '';
@@ -218,48 +150,40 @@
         .project-card:hover::before { height: 100%; }
 
         .project-tag {
-            font-size: 0.65rem;
+            font-size: 0.65rem !important;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            opacity: 0.4;
+            color: #bbb !important;
             margin-bottom: 0.75rem;
         }
 
         .project-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 400;
+            color: #1a1a1a;
             margin-bottom: 0.75rem;
             line-height: 1.3;
         }
 
         .project-card p {
-            font-size: 0.85rem;
-            opacity: 0.55;
+            font-size: 0.85rem !important;
+            color: #555 !important;
             line-height: 1.7;
             margin-bottom: 1.5rem;
         }
 
-        .project-techs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
+        .project-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
         .tech-pill {
-            font-size: 0.7rem;
+            font-size: 0.7rem !important;
+            color: #666 !important;
             padding: 0.25rem 0.6rem;
             border: 1px solid rgba(0,0,0,0.15);
-            opacity: 0.7;
-            letter-spacing: 0.05em;
         }
 
-        /* ── EXPÉRIENCES ── */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
+        /* ── Timeline ── */
+        .timeline { display: flex; flex-direction: column; }
 
         .timeline-item {
             display: grid;
@@ -269,16 +193,15 @@
         }
 
         .timeline-date {
-            font-size: 0.8rem;
-            opacity: 0.4;
+            font-size: 0.8rem !important;
+            color: #bbb !important;
             text-align: right;
             padding-top: 0.15rem;
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.03em;
         }
 
         .timeline-line {
-            background: rgba(0,0,0,0.12);
+            background: rgba(0,0,0,0.1);
             position: relative;
         }
 
@@ -288,31 +211,31 @@
             top: 6px; left: -4px;
             width: 9px; height: 9px;
             border-radius: 50%;
-            border: 1px solid rgba(0,0,0,0.4);
-            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.3);
+            background: #fff;
         }
 
         .timeline-content h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             font-weight: 400;
+            color: #1a1a1a;
             margin-bottom: 0.25rem;
         }
 
         .timeline-content .org {
-            font-size: 0.8rem;
-            opacity: 0.45;
+            font-size: 0.8rem !important;
+            color: #aaa !important;
             margin-bottom: 0.7rem;
-            letter-spacing: 0.03em;
         }
 
         .timeline-content p {
-            font-size: 0.85rem;
-            opacity: 0.55;
+            font-size: 0.85rem !important;
+            color: #555 !important;
             line-height: 1.7;
         }
 
-        /* ── COMPÉTENCES ── */
+        /* ── Skills ── */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -320,23 +243,18 @@
         }
 
         .skill-group h4 {
-            font-size: 0.7rem;
+            font-size: 0.7rem !important;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            opacity: 0.35;
+            color: #bbb !important;
             margin-bottom: 1rem;
         }
 
-        .skill-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+        .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 
         .skill-list li {
-            font-size: 0.9rem;
-            opacity: 0.7;
+            font-size: 0.9rem !important;
+            color: #444 !important;
             display: flex;
             align-items: center;
             gap: 0.6rem;
@@ -346,11 +264,11 @@
             content: '';
             width: 4px; height: 4px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.2);
             flex-shrink: 0;
         }
 
-        /* ── FORMATION ── */
+        /* ── Education ── */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -359,35 +277,51 @@
         }
 
         .edu-card {
-            background: #ffffff;
+            background: #fff;
             padding: 1.75rem;
         }
 
+        .edu-card-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .uni-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
         .edu-card .year {
-            font-size: 0.7rem;
-            opacity: 0.35;
+            font-size: 0.7rem !important;
+            color: #bbb !important;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
         }
 
         .edu-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 400;
-            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
         }
 
         .edu-card .school {
-            font-size: 0.8rem;
-            opacity: 0.45;
+            font-size: 0.8rem !important;
+            color: #aaa !important;
         }
 
-        /* ── CONTACT STRIP ── */
+        /* ── Contact strip ── */
         .cv-contact {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 80px;
             border-top: 1px solid rgba(0,0,0,0.08);
             display: flex;
             justify-content: space-between;
@@ -396,66 +330,33 @@
             gap: 1.5rem;
         }
 
-        .cv-contact p {
-            font-size: 0.85rem;
-            opacity: 0.45;
+        .cv-contact > p {
+            font-size: 0.85rem !important;
+            color: #bbb !important;
         }
 
-        .contact-items {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+        .contact-items { display: flex; gap: 2rem; flex-wrap: wrap; }
 
         .contact-items a {
-            color: #1a1a1a;
-            text-decoration: none;
+            color: #666 !important;
             font-size: 0.85rem;
-            opacity: 0.55;
-            transition: opacity 0.2s;
+            transition: color 0.2s;
         }
 
-        .contact-items a:hover { opacity: 1; }
+        .contact-items a:hover { color: #1a1a1a !important; }
 
-        /* ── FOOTER ── */
-        footer {
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        footer a img {
-            width: 22px;
-            opacity: 0.35;
-            transition: opacity 0.2s;
-        }
-
-        footer a:hover img { opacity: 0.7; }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 700px) {
+        /* ── Responsive ── */
+        @media (max-width: 996px) {
             .cv-hero {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
-                padding-top: 7rem;
+                padding: 5rem 20px 3rem;
             }
-
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 0.3rem 0;
-            }
-
+            .cv-section { padding: 3rem 20px; }
+            .cv-contact { padding: 2rem 20px; flex-direction: column; align-items: flex-start; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
             .timeline-date { text-align: left; }
             .timeline-line { display: none; }
-
-            .cv-contact {
-                flex-direction: column;
-                align-items: flex-start;
-            }
         }
     </style>
 </head>
@@ -464,87 +365,135 @@
 
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="images/logo.png" alt="Logo" class="logo">
-                <span class="logo-text">empereur tamarin</span>
-            </div>
+            <a href="index.html" class="lien-icone">
+                <img src="images/logo.png" alt="Logo" class="logo2" >
+            </a>
             <div>
-                <a href="index.html">Home</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="a-propos.html">About</a>
-                <a href="cv.html" class="active">Resume</a>
+                <a href="index.html">HOME</a>
+                <a href="portfolio.html">PORTFOLIO</a>
             </div>
         </nav>
     </header>
 
     <main>
-
+        <div class="top-image"></div>
         <!-- HERO -->
         <section class="cv-hero">
             <div class="cv-hero-text">
-                <h1>Aerospace<br><span>engineer</span></h1>
-                <p class="tagline">Passionate about embedded systems, orbital mechanics and space mission design. Looking to contribute to projects that push the boundaries of exploration.</p>
+                <h1>Léo Bougault<br><span>GNC Engineer</span></h1>
+                <p class="tagline">GNC Engineer at Latitude (algorithms, flight simulator, HIL, CI/CD). Graduate of Politecnico di Milano and ISAE-ENSMA, specialised in orbital mechanics, attitude control, guidance navigation & control, and space propulsion.</p>
                 <div class="cv-hero-links">
-                    <a href="#projects" class="btn-outline">Projects</a>
-                    <a href="#contact" class="btn-outline">Contact</a>
-                    <a href="portfolio.html" class="btn-outline">Portfolio</a>
+                    <a href="#projects" class="btn-cv">Projects</a>
+                    <a href="#experience" class="btn-cv">Experience</a>
+                    <a href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="btn-cv">Contact</a>
+                    <a href="portfolio.html" class="btn-cv">Portfolio</a>
                 </div>
             </div>
             <div class="cv-hero-stats">
                 <div class="stat-cell">
-                    <div class="number">3+</div>
-                    <div class="label">Years of experience</div>
+                    <div class="number">4+</div>
+                    <div class="stat-label">Internships</div>
                 </div>
                 <div class="stat-cell">
-                    <div class="number">6</div>
-                    <div class="label">Projects led</div>
-                </div>
-                <div class="stat-cell">
-                    <div class="number">2</div>
-                    <div class="label">International internships</div>
+                    <div class="number">3</div>
+                    <div class="stat-label">Universities</div>
                 </div>
                 <div class="stat-cell">
                     <div class="number">4</div>
-                    <div class="label">Languages mastered</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="number">4</div>
+                    <div class="stat-label">Languages</div>
                 </div>
             </div>
         </section>
 
+         <!-- EDUCATION -->
+        <section class="cv-section" id="education">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-card-top">
+                        <img class="uni-logo-ensma"
+                             src="images/Logo_Politecnico_Milano.png"
+                             alt="Politecnico di Milano">
+                        <div>
+                            <div class="year">Sep 2022 — Sep 2024</div>
+                            <h3>Double Degree prog — MSc Space Engineering</h3>
+                            <div class="school">Politecnico di Milano · Milan, Italy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-top">
+                        <img class="uni-logo-sapienza"
+                             src="images/sapienza.png"
+                             alt="Sapienza University of Rome">
+                        <div>
+                            <div class="year">Sep 2021 — Jan 2022</div>
+                            <h3>Semester Exchange — Space & Astronautical Engineering</h3>
+                            <div class="school">Sapienza University of Rome · Rome, Italy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-card-top">
+                        <img class="uni-logo-ensma"
+                             src="images/Logo_ISAE-ENSMA.svg.png"
+                             alt="ISAE-ENSMA">
+                        <div>
+                            <div class="year">Sep 2019 — Sep 2024</div>
+                            <h3>Engineering degree — Aerospace, Mechanics & Energy</h3>
+                            <div class="school">ISAE-ENSMA · Poitiers, France</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
         <!-- PROJECTS -->
         <section class="cv-section" id="projects">
             <div class="section-header">
-                <span class="section-label">01</span>
+                <span class="section-label">02</span>
                 <h2 class="section-title">Selected projects</h2>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-tag">Orbital mechanics</div>
-                    <h3>Low-thrust orbital transfer optimisation</h3>
-                    <p>Development of an optimal trajectory algorithm for a LEO satellite, minimising propellant consumption during orbit correction manoeuvres.</p>
+                    <div class="project-tag">GNC · Flight simulation</div>
+                    <h3>6-DOF flight simulator — Latitude</h3>
+                    <p>Development and validation of a 6-DOF flight simulator including actuators, sensors and OBC models. HIL platform with C++ generated code, TwinCat real-time integration and GNSS simulator. Monte Carlo analysis for global system performance.</p>
                     <div class="project-techs">
                         <span class="tech-pill">MATLAB</span>
-                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Simulink</span>
+                        <span class="tech-pill">TwinCat</span>
+                        <span class="tech-pill">Embedded Coder</span>
                         <span class="tech-pill">STK</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-tag">Embedded systems</div>
-                    <h3>ADCS design for a 3U CubeSat</h3>
-                    <p>Modelling and simulation of attitude control for a 3U CubeSat. Integration of magnetorquers and reaction wheels within a real-time architecture.</p>
+                    <div class="project-tag">Propulsion · Optimisation</div>
+                    <h3>Turbopump model & optimisation — Latitude / CNES</h3>
+                    <p>0D turbopump model development, convex optimisation and CFD verification at Latitude. Multi-physics optimisation on the Prometheus turbopump (rotodynamics, bearing mechanics) at CNES.</p>
                     <div class="project-techs">
-                        <span class="tech-pill">Embedded C</span>
-                        <span class="tech-pill">Simulink</span>
-                        <span class="tech-pill">FreeRTOS</span>
+                        <span class="tech-pill">Python (SciPy)</span>
+                        <span class="tech-pill">ANSYS Fluent</span>
+                        <span class="tech-pill">RotorINSA</span>
+                        <span class="tech-pill">Abaqus</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-tag">Data analysis</div>
-                    <h3>Satellite telemetry data processing</h3>
-                    <p>Near real-time telemetry processing and visualisation pipeline built for a LEO constellation operator.</p>
+                    <div class="project-tag">Mission design · ESA</div>
+                    <h3>Venus mission — ESA Concurrent Engineering Challenge 2024</h3>
+                    <p>Phase A mission development: launch injection, interplanetary transfer, aerobraking, transfer to target orbit, orbit propagation around Venus, station keeping and corrections. <a href="https://arxiv.org/pdf/2502.13737" target="_blank" style="color:#aaa;font-size:0.8rem;">arxiv ↗</a></p>
                     <div class="project-techs">
-                        <span class="tech-pill">Python</span>
-                        <span class="tech-pill">Pandas</span>
-                        <span class="tech-pill">Grafana</span>
+                        <span class="tech-pill">STK</span>
+                        <span class="tech-pill">ESA Comet</span>
+                        <span class="tech-pill">Systems engineering</span>
                     </div>
                 </div>
             </div>
@@ -553,35 +502,53 @@
         <!-- EXPERIENCE -->
         <section class="cv-section" id="experience">
             <div class="section-header">
-                <span class="section-label">02</span>
+                <span class="section-label">03</span>
                 <h2 class="section-title">Experience</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2024 — Present</div>
+                    <div class="timeline-date">Dec 2024 — Present</div>
                     <div class="timeline-line"></div>
                     <div class="timeline-content">
-                        <h3>Space systems engineer</h3>
-                        <div class="org">Company / Agency · City</div>
-                        <p>Description of your missions, responsibilities and key contributions to the project.</p>
+                        <h3>GNC Engineer</h3>
+                        <div class="org">Latitude · Reims, France</div>
+                        <p>Development and validation of 6-DOF flight simulator (actuators, sensors, OBC models). GNC algorithms integration into flight software. HIL platform with TwinCat & GNSS simulator. Monte Carlo analysis, CI/CD and automated V&V.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2023</div>
+                    <div class="timeline-date">Feb — Aug 2024</div>
                     <div class="timeline-line"></div>
                     <div class="timeline-content">
-                        <h3>Systems engineering internship</h3>
-                        <div class="org">Company · Country</div>
-                        <p>Contributed to the preliminary design of an onboard instrument. Wrote technical documentation and performed firmware unit testing.</p>
+                        <h3>Engineer Intern</h3>
+                        <div class="org">Latitude · Reims, France</div>
+                        <p>0D turbopump model development. Convex optimisation (SciPy-SLSQP) and CFD verification with ANSYS Fluent. Validation through test campaign.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2022</div>
+                    <div class="timeline-date">Apr 2024</div>
                     <div class="timeline-line"></div>
                     <div class="timeline-content">
-                        <h3>Research & development internship</h3>
-                        <div class="org">Research laboratory · City</div>
-                        <p>Study of radiation hardness of electronic components in a simulated space environment.</p>
+                        <h3>System Engineer Intern</h3>
+                        <div class="org">ESA Academy · Redu, Belgium</div>
+                        <p>2024 Concurrent Engineering Challenge: Phase A Venus mission design (interplanetary transfer, aerobraking, orbit propagation, station keeping). 2023 Earth Observation satellite: SAR system design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb — Jun 2022</div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-content">
+                        <h3>Propulsion Engineer Intern</h3>
+                        <div class="org">CNES · Paris, France</div>
+                        <p>Rotodynamics and bearing mechanics for cryogenic applications. Multi-physics optimisation on the Prometheus turbopump.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun — Aug 2021</div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-content">
+                        <h3>Research Engineer Intern</h3>
+                        <div class="org">Cranfield University · Cranfield, UK</div>
+                        <p>Injector development: multi-jet injection, turbulent mixing, flame stabilisation, residence time control.</p>
                     </div>
                 </div>
             </div>
@@ -590,87 +557,53 @@
         <!-- SKILLS -->
         <section class="cv-section" id="skills">
             <div class="section-header">
-                <span class="section-label">03</span>
+                <span class="section-label">04</span>
                 <h2 class="section-title">Skills</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-group">
                     <h4>Space engineering</h4>
                     <ul class="skill-list">
-                        <li>Orbital mechanics</li>
+                        <li>GNC (algorithms, HIL, CI/CD)</li>
+                        <li>Orbital dynamics & mechanics</li>
                         <li>Attitude control (ADCS)</li>
                         <li>Space propulsion</li>
-                        <li>Mission analysis</li>
-                        <li>ECSS standards</li>
+                        <li>Spacecraft guidance & navigation</li>
+                        <li>Mission & systems engineering</li>
                     </ul>
                 </div>
                 <div class="skill-group">
                     <h4>Tools & software</h4>
                     <ul class="skill-list">
-                        <li>MATLAB / Simulink</li>
-                        <li>STK / GMAT</li>
-                        <li>CATIA / SolidWorks</li>
-                        <li>Python / NumPy</li>
-                        <li>C / C++</li>
+                        <li>MATLAB / Simulink / Embedded Coder</li>
+                        <li>Python (SciPy, NumPy)</li>
+                        <li>STK / EcosimPro</li>
+                        <li>TwinCat (real-time)</li>
+                        <li>ANSYS Fluent / Abaqus</li>
+                        <li>CATIA / Git / LaTeX</li>
                     </ul>
                 </div>
                 <div class="skill-group">
                     <h4>Soft skills</h4>
                     <ul class="skill-list">
-                        <li>Project management</li>
-                        <li>Technical documentation</li>
-                        <li>International teamwork</li>
-                        <li>Scientific presentations</li>
+                        <li>Multidisciplinary teamwork</li>
+                        <li>Concurrent engineering</li>
+                        <li>Test campaign & validation</li>
+                        <li>International environment</li>
                     </ul>
                 </div>
                 <div class="skill-group">
                     <h4>Languages</h4>
                     <ul class="skill-list">
                         <li>French — native</li>
-                        <li>English — fluent (C1)</li>
-                        <li>Spanish — intermediate</li>
+                        <li>Italian — native</li>
+                        <li>English — C1</li>
+                        <li>Spanish — B2</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- EDUCATION -->
-        <section class="cv-section" id="education">
-            <div class="section-header">
-                <span class="section-label">04</span>
-                <h2 class="section-title">Education</h2>
-            </div>
-            <div class="education-grid">
-                <div class="edu-card">
-                    <div class="year">2020 — 2023</div>
-                    <h3>MSc Space Engineering</h3>
-                    <div class="school">School / University · City</div>
-                </div>
-                <div class="edu-card">
-                    <div class="year">2017 — 2020</div>
-                    <h3>BSc Engineering Sciences</h3>
-                    <div class="school">School / University · City</div>
-                </div>
-                <div class="edu-card">
-                    <div class="year">2017</div>
-                    <h3>Scientific Baccalaureate</h3>
-                    <div class="school">High school · City</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <div class="cv-contact" id="contact">
-            <p>Open to new opportunities</p>
-            <div class="contact-items">
-                <a href="mailto:your@email.com">your@email.com</a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/leobglt/" target="_blank">Instagram</a>
-                <a href="portfolio.html">Portfolio</a>
-            </div>
-        </div>
-
-    </main>
 
     <footer>
         <div class="logo-container">
@@ -679,4 +612,13 @@
         </div>
         <div>
             <a target="_blank" href="https://www.instagram.com/leobglt/" class="lien-icone">
-          
+                <img src="images/instagram.png" alt="Logo Instagram">
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="lien-icone">
+                <img src="images/linkedin.png" alt="Logo Linkedin">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
