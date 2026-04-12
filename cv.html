@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resume — empereur tamarin</title>
+    <link href="style/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        /* ── HEADER (identique au site) ── */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-left: 2rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover { opacity: 1; }
+        nav a.active { opacity: 1; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; }
+
+        /* ── HERO ── */
+        .cv-hero {
+            padding: 10rem 2rem 5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .cv-hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .cv-hero-text h1 span {
+            opacity: 0.35;
+        }
+
+        .cv-hero-text .tagline {
+            font-size: 1rem;
+            opacity: 0.55;
+            line-height: 1.7;
+            max-width: 400px;
+            margin-bottom: 2rem;
+        }
+
+        .cv-hero-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid rgba(0,0,0,0.25);
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.5);
+        }
+
+        .cv-hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .stat-cell {
+            background: #ffffff;
+            padding: 1.5rem;
+        }
+
+        .stat-cell .number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+        }
+
+        .stat-cell .label {
+            font-size: 0.75rem;
+            opacity: 0.45;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.3rem;
+        }
+
+        /* ── SECTIONS COMMUNES ── */
+        .cv-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0.35;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* ── PROJETS ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1px;
+            background: rgba(0,0,0,0.08);
+        }
+
+        .project-card {
+            background: #ffffff;
+            padding: 2rem;
+            transition: background 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            background: #f7f7f7;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 0;
+            background: #1a1a1a;
+            transition: height 0.3s ease;
+        }
+
+        .project-card:hover::before { height: 100%; }
+
+        .project-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0.4;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            opacity: 0.55;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tech-pill {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid rgba(0,0,0,0.15);
+            opacity: 0.7;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── EXPÉRIENCES ── */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 160px 1px 1fr;
+            gap: 0 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            opacity: 0.4;
+            text-align: right;
+            padding-top: 0.15rem;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .timeline-line {
+            background: rgba(0,0,0,0.12);
+            position: relative;
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 6px; left: -4px;
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.4);
+            background: #ffffff;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content .org {
+            font-size: 0.8rem;
+            opacity: 0.45;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.03em;
+        }
+
+        .timeline-content p {
+            font-size: 0.85rem;
+            opacity: 0.55;
+            line-height: 1.7;
+        }
+
+        /* ── COMPÉTENCES ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-group h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0.35;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .skill-list li {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .skill-list li::before {
+            content: '';
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        /* ── FORMATION ── */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: rgba(0,0,0,0.08);
+        }
+
+        .edu-card {
+            background: #ffffff;
+            padding: 1.75rem;
+        }
+
+        .edu-card .year {
+            font-size: 0.7rem;
+            opacity: 0.35;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-card .school {
+            font-size: 0.8rem;
+            opacity: 0.45;
+        }
+
+        /* ── CONTACT STRIP ── */
+        .cv-contact {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .cv-contact p {
+            font-size: 0.85rem;
+            opacity: 0.45;
+        }
+
+        .contact-items {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-items a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            opacity: 0.55;
+            transition: opacity 0.2s;
+        }
+
+        .contact-items a:hover { opacity: 1; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        footer a img {
+            width: 22px;
+            opacity: 0.35;
+            transition: opacity 0.2s;
+        }
+
+        footer a:hover img { opacity: 0.7; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            .cv-hero {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding-top: 7rem;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.3rem 0;
+            }
+
+            .timeline-date { text-align: left; }
+            .timeline-line { display: none; }
+
+            .cv-contact {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <span class="logo-text">empereur tamarin</span>
+            </div>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="a-propos.html">About</a>
+                <a href="cv.html" class="active">Resume</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="cv-hero">
+            <div class="cv-hero-text">
+                <h1>Aerospace<br><span>engineer</span></h1>
+                <p class="tagline">Passionate about embedded systems, orbital mechanics and space mission design. Looking to contribute to projects that push the boundaries of exploration.</p>
+                <div class="cv-hero-links">
+                    <a href="#projects" class="btn-outline">Projects</a>
+                    <a href="#contact" class="btn-outline">Contact</a>
+                    <a href="portfolio.html" class="btn-outline">Portfolio</a>
+                </div>
+            </div>
+            <div class="cv-hero-stats">
+                <div class="stat-cell">
+                    <div class="number">3+</div>
+                    <div class="label">Years of experience</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="number">6</div>
+                    <div class="label">Projects led</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="number">2</div>
+                    <div class="label">International internships</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="number">4</div>
+                    <div class="label">Languages mastered</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="cv-section" id="projects">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">Selected projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-tag">Orbital mechanics</div>
+                    <h3>Low-thrust orbital transfer optimisation</h3>
+                    <p>Development of an optimal trajectory algorithm for a LEO satellite, minimising propellant consumption during orbit correction manoeuvres.</p>
+                    <div class="project-techs">
+                        <span class="tech-pill">MATLAB</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">STK</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-tag">Embedded systems</div>
+                    <h3>ADCS design for a 3U CubeSat</h3>
+                    <p>Modelling and simulation of attitude control for a 3U CubeSat. Integration of magnetorquers and reaction wheels within a real-time architecture.</p>
+                    <div class="project-techs">
+                        <span class="tech-pill">Embedded C</span>
+                        <span class="tech-pill">Simulink</span>
+                        <span class="tech-pill">FreeRTOS</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-tag">Data analysis</div>
+                    <h3>Satellite telemetry data processing</h3>
+                    <p>Near real-time telemetry processing and visualisation pipeline built for a LEO constellation operator.</p>
+                    <div class="project-techs">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Pandas</span>
+                        <span class="tech-pill">Grafana</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="cv-section" id="experience">
+            <div class="section-header">
+                <span class="section-label">02</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 — Present</div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-content">
+                        <h3>Space systems engineer</h3>
+                        <div class="org">Company / Agency · City</div>
+                        <p>Description of your missions, responsibilities and key contributions to the project.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-content">
+                        <h3>Systems engineering internship</h3>
+                        <div class="org">Company · Country</div>
+                        <p>Contributed to the preliminary design of an onboard instrument. Wrote technical documentation and performed firmware unit testing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-content">
+                        <h3>Research & development internship</h3>
+                        <div class="org">Research laboratory · City</div>
+                        <p>Study of radiation hardness of electronic components in a simulated space environment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="cv-section" id="skills">
+            <div class="section-header">
+                <span class="section-label">03</span>
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Space engineering</h4>
+                    <ul class="skill-list">
+                        <li>Orbital mechanics</li>
+                        <li>Attitude control (ADCS)</li>
+                        <li>Space propulsion</li>
+                        <li>Mission analysis</li>
+                        <li>ECSS standards</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Tools & software</h4>
+                    <ul class="skill-list">
+                        <li>MATLAB / Simulink</li>
+                        <li>STK / GMAT</li>
+                        <li>CATIA / SolidWorks</li>
+                        <li>Python / NumPy</li>
+                        <li>C / C++</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Soft skills</h4>
+                    <ul class="skill-list">
+                        <li>Project management</li>
+                        <li>Technical documentation</li>
+                        <li>International teamwork</li>
+                        <li>Scientific presentations</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Languages</h4>
+                    <ul class="skill-list">
+                        <li>French — native</li>
+                        <li>English — fluent (C1)</li>
+                        <li>Spanish — intermediate</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="cv-section" id="education">
+            <div class="section-header">
+                <span class="section-label">04</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="year">2020 — 2023</div>
+                    <h3>MSc Space Engineering</h3>
+                    <div class="school">School / University · City</div>
+                </div>
+                <div class="edu-card">
+                    <div class="year">2017 — 2020</div>
+                    <h3>BSc Engineering Sciences</h3>
+                    <div class="school">School / University · City</div>
+                </div>
+                <div class="edu-card">
+                    <div class="year">2017</div>
+                    <h3>Scientific Baccalaureate</h3>
+                    <div class="school">High school · City</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <div class="cv-contact" id="contact">
+            <p>Open to new opportunities</p>
+            <div class="contact-items">
+                <a href="mailto:your@email.com">your@email.com</a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/leobglt/" target="_blank">Instagram</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <span class="logo-text">empereur tamarin</span>
+        </div>
+        <div>
+            <a target="_blank" href="https://www.instagram.com/leobglt/" class="lien-icone">
+          
