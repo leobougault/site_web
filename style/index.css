@@ -101,7 +101,7 @@
 }
 
 .accueil-introduction h1 {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .accueil-introduction p {
@@ -112,7 +112,7 @@
 }
 
 .accueil-introduction div {
-  padding-right: 80px;
+  padding-right:0px;
   margin: auto;
 }
 

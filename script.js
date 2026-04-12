@@ -1,33 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const menuDeroulant = document.getElementById("menuDeroulant");
-
-    // Récupérer les conteneurs d'images
-    const imageContainers = {
-        images1: document.getElementById("images1"),
-        images2: document.getElementById("images2")
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("#menuLiens a");
+    const allContainers = document.querySelectorAll(".grid-paysages");
+  
+    // Fonction pour afficher le conteneur sélectionné
+    const showContainer = (targetId) => {
+      allContainers.forEach((container) => {
+        if (container.id === targetId) {
+          container.classList.remove("hidden"); // Affiche le bon conteneur
+        } else {
+          container.classList.add("hidden"); // Masque les autres
+        }
+      });
     };
-
-    // Fonction pour masquer tous les conteneurs d'images
-    function masquerTousLesConteneurs() {
-        for (const i in imageContainers) {
-            imageContainers[i].style.display = "none";
-        }
-    }
-
-    // Écouter les changements dans le menu déroulant
-    menuDeroulant.addEventListener("change", function () {
-        const choix = menuDeroulant.value;
-        
-        // Masquer tous les conteneurs d'images
-        masquerTousLesConteneurs();
-
-        // Afficher le conteneur d'images correspondant au choix, ou images1 par défaut
-        if (imageContainers.hasOwnProperty(choix)) {
-            imageContainers[choix].style.display = "grid";
-        }
+  
+    // Ajouter un gestionnaire d'événement sur chaque lien
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault(); // Empêche le rechargement de la page
+        const targetId = link.getAttribute("data-target");
+        showContainer(targetId);
+      });
     });
-
-    // Masquer tous les conteneurs d'images au chargement de la page, sauf images1
-    masquerTousLesConteneurs();
-    imageContainers["images1"].style.display = "grid";
-});
+  
+    // Affiche le premier groupe par défaut
+    showContainer("images1");
+  });
+  

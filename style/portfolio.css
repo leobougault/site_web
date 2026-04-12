@@ -29,20 +29,33 @@
 }
 
 
-#menuDeroulant {
-  font-size: 25px;
-  font-family: 'Anton', sans-serif;
-  text-align: center;
-  background-color: #fff;
-  width: 200px; /* Largeur du menu déroulant */
-  border: none; /* Supprime la bordure */
-  outline: none; /* Supprime la bordure de focus */
-  color: #242424;
-  text-decoration: none;
-  line-height: 3; /* Ajuste la hauteur de ligne pour éviter la coupure du texte */
-  overflow: visible; /* Empêche le texte de déborder */
-  text-overflow: ellipsis; 
+#menuLiens {
+  list-style: none; /* Supprime les puces */
+  padding: 0;
+  margin: 0 0 80px 0; /* Ajoute un espace en bas */
+  display: flex; /* Affiche les éléments en ligne */
+  justify-content: center; /* Centre les éléments horizontalement */
 }
+
+#menuLiens li {
+  margin: 0 15px; /* Espacement horizontal entre les liens */
+}
+
+#menuLiens a {
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none; /* Supprime le soulignement */
+  color: #242424;
+  padding: 5px 10px; /* Ajoute un effet de bouton avec espace interne */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px; /* Coins arrondis */
+}
+
+#menuLiens a:hover {
+  color: #fff; /* Texte blanc au survol */
+  background-color: #000; /* Fond noir au survol */
+}
+
 
 
 .grid-paysages {
@@ -94,7 +107,7 @@
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
 
@@ -128,6 +141,11 @@
   top: 0;
   left: 0;
 }
+
+.hidden {
+  display: none;
+}
+ 
 
 @media screen and (max-width: 996px) {
   .grid-paysages {
