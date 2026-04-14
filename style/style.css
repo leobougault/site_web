@@ -120,6 +120,33 @@ header .logo2 {
   margin-left: 0%;
 }
 
+
+.logo-container {
+  display: flex; 
+  align-items: center; 
+}
+
+.logo {
+  width: 50px; 
+  height: auto; 
+  margin-right: 0; 
+  margin-right: 20px;
+}
+
+@font-face {
+  font-family: 'Mistrully';
+  src: url('fonts/Mistrully-Ojmd.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo-text {
+  font-family: 'Mistrully', sans-serif; 
+  font-size: 20px; 
+  color: #050000; 
+  margin-left: 0; 
+}
+
 .edu-card-top img.uni-logo-ensma {
   width: 150px;
 }
@@ -167,6 +194,11 @@ header .logo2 {
     width: 80px;
   }
 
+
+  .logo-container .logo-text {
+    display: none;
+  }
+  
   footer .logo2,
   header .logo2 {
     width: 80px; 

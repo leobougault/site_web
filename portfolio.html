@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" >
-    <title>Portfolio - Leo Bougault </title>
-    <link href="style/style.css" rel="stylesheet" >
-    <link href="style/portfolio.css" rel="stylesheet" >
+    <meta charset="utf-8">
+    <title>Portfolio — Léo Bougault</title>
+    <link href="style/style.css" rel="stylesheet">
+     <link href="style/portfolio.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Manrope:wght@200&family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mistrully&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">       
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
 </head>
 
@@ -20,216 +18,269 @@
     <header>
         <nav>
             <a href="index.html" class="lien-icone">
-                <img src="images/logo.png" alt="Logo" class="logo2" >
+                <img src="images/logo.png" alt="Logo" class="logo2">
             </a>
             <div>
                 <a href="index.html">HOME</a>
-                <a href="a-propos.html">ABOUT</a>
-                <a href="portfolio.html">PORTFOLIO</a>
                 <a href="cv.html">RESUME</a>
             </div>
         </nav>
     </header>
+
     <main>
-        <section class="portfolio_title">
-            <img src="images/portfolio/Portgual/IMG_5419.JPG" id="video-bg"></img>
+
+        <!-- ── HERO ── -->
+        <section class="hero" id="hero">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
                 <h1>Portfolio</h1>
+                <p>Photography by Léo Bougault</p>
+            </div>
         </section>
-        <section class="portfolio-section-photos">
-            <div class="center-container">
-                <ul id="menuLiens">
-                    <li><a href="#" data-target="images1">Near Milano 🇮🇹</a></li>
-                    <li><a href="#" data-target="images2">Portugal 🇵🇹</a></li>
-                    <li><a href="#" data-target="images3">Villa Lago 🇮🇹</a></li>
-                  </ul>
-            </div>
-            <div class="grid-paysages" id="images1">
-                <a href="images/portfolio/Italie/paysage1 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage1 - Grande.jpeg" alt="Mont Aoraki - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage2 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage2 - Grande.jpeg" alt="Parc National d’Abel Tasman - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage3 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage3 - Grande.jpeg" alt="Lac Rotorua - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage4 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage4 - Grande.jpeg" alt="Lac Wanaka - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage5 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage5 - Grande.jpeg" alt="Mont Taranaki - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage6 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage6 - Grande.jpeg" alt="Milford Sound - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage7 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage7 - Grande.jpeg" alt="Twelve Apostle - Australie" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage8 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage8 - Grande.jpeg" alt="Wai-O-Tapu - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Italie/paysage9 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Italie/paysage9 - Grande.jpeg" alt="Mont Cook - Nouvelle Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
+
+        <!-- ── GALLERY ── -->
+        <div class="gallery-wrapper">
+
+            <!-- Tab bar — add a new <button> for each album -->
+            <div class="tab-bar" role="tablist">
+                <button class="tab-btn" data-tab="italie" role="tab">Near Milano 🇮🇹 <span class="tab-count">9</span></button>
+                <button class="tab-btn" data-tab="portugal" role="tab">Portugal 🇵🇹 <span class="tab-count">9</span></button>
+                <button class="tab-btn" data-tab="lago" role="tab">Villa Lago 🇮🇹 <span class="tab-count">9</span></button>
+                 <button class="tab-btn active" data-tab="tmb" role="tab">TMB <span class="tab-count">9</span></button>
+                <!--
+                    ╔══════════════════════════════════════════════════════╗
+                    ║  TO ADD A NEW ALBUM:                                 ║
+                    ║  1. Add a button here:                               ║
+                    ║     <button class="tab-btn" data-tab="myalbum">      ║
+                    ║       My Album 🌍 <span class="tab-count">N</span>   ║
+                    ║     </button>                                        ║
+                    ║  2. Add a panel below with id="tab-myalbum"          ║
+                    ║  3. Add photos in the PHOTOS config object           ║
+                    ╚══════════════════════════════════════════════════════╝
+                -->
             </div>
 
-            <div class="grid-paysages" id="images2">
-                <a href="images/portfolio/Portgual/paysage1 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage1 - Grande.jpeg" alt="Mont Aoraki - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage2 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage2 - Grande.jpeg" alt="Parc National d’Abel Tasman - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage3 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage3 - Grande.jpeg" alt="Lac Rotorua - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage4 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage4 - Grande.jpeg" alt="Lac Wanaka - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage5 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage5 - Grande.jpeg" alt="Mont Taranaki - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage6 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage6 - Grande.jpeg" alt="Milford Sound - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage7 - Grande.jpeg class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage7 - Grande.jpeg" alt="Twelve Apostle - Australie" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage8 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage8 - Grande.jpeg" alt="Wai-O-Tapu - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Portgual/paysage9 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Portgual/paysage9 - Grande.jpeg" alt="Mont Cook - Nouvelle Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
+            <!-- Tab panels — one per album -->
+            <div class="tab-panel" id="tab-italie" role="tabpanel"></div>
+            <div class="tab-panel" id="tab-portugal" role="tabpanel"></div>
+            <div class="tab-panel" id="tab-lago" role="tabpanel"></div>
+            <div class="tab-panel active" id="tab-tmb" role="tabpanel"></div>
+            <!--
+                Add a new panel for each new album:
+                <div class="tab-panel" id="tab-myalbum" role="tabpanel"></div>
+            -->
+
+            <!-- Before/After comparison -->
+            <div class="compare-section">
+                <p class="compare-label">Before / After</p>
+                <div class="juxtapose" data-mode="horizontal">
+                    <img src="images/portfolio/Italie/IMG_4679.JPG" alt="Before">
+                    <img src="images/portfolio/Italie/IMG_4761.JPG" alt="After">
+                </div>
             </div>
-            
-            
-            <div class="grid-paysages" id="images3">
-                <a href="images/portfolio/Lago/IMG_6016 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6016 - Grande.jpeg" alt="Lago Como" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_6013 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6013 - Grande.jpeg" alt="Parc National d’Abel Tasman - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_6015 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6015 - Grande.jpeg" alt="Lac Rotorua - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_6033 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6033 - Grande.jpeg" alt="Lac Wanaka - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_6029 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6029 - Grande.jpeg" alt="Mont Taranaki - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_6034 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6034 - Grande.jpeg" alt="Milford Sound - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_6015 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_6015 - Grande.jpeg" alt="Twelve Apostle - Australie" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_5892 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_5892 - Grande.jpeg" alt="Wai-O-Tapu - Nouvelle-Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/Lago/IMG_5889 - Grande.jpeg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/Lago/IMG_5889 - Grande.jpeg" alt="Mont Cook - Nouvelle Zélande" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-            </div>
-            <script src="script.js"></script>
-            
-            <!-- <h2>Portraits</h2>
-            <div class="grid-portraits">
-                <a href="images/portfolio/portrait1.jpg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/portrait1.jpg" alt="Portrait jeune femme 1" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/portrait2.jpg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/portrait2.jpg" alt="Portrait jeune femme 2" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/portrait3.jpg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/portrait3.jpg" alt="Portrait jeune homme 3" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/portrait4.jpg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/portrait4.jpg" alt="Portrait jeune femme 4" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/portrait5.jpg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/portrait5.jpg" alt="Portrait jeune femme 5" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
-                <a href="images/portfolio/portrait6.jpg" class="lien-conteneur-photo">
-                    <img src="images/portfolio/portrait6.jpg" alt="Portrait jeune femme 6" >
-                    <div class="photo-hover">Voir la photo</div>
-                </a>
 
-            </div> -->
-            
-            <div id="photoModal" class="modal hidden">
-                <span class="modal-close">&times;</span>
-                <img class="modal-content" id="modalImage" alt="Image agrandie">
-                <div id="modalCaption"></div>
-              </div>
+        </div><!-- /gallery-wrapper -->
 
-            <style>
-                /* Ajouter de l'espace et styliser le conteneur */
-                .juxtapose {
-                  margin: 20px auto;
-                  padding: 20px;
-                  max-width: 1000px;
-                }
-              </style>
-
-            <div class="juxtapose" data-mode="horizontal">
-                <img src="images/portfolio/Italie/IMG_4679.JPG" alt="Before">
-                <img src="images/portfolio/Italie/IMG_4761.JPG" alt="After">
-              </div>
-            
-              <!-- Juxtapose.js Script -->
-
-              <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-              <script src="zoopic.js"></script>
-        </section>
     </main>
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo lightbox">
+        <button class="lb-close" id="lbClose" aria-label="Close">&#x2715;</button>
+        <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#x2039;</button>
+        <div class="lb-img-wrap">
+            <img id="lbImage" src="" alt="">
+            <div class="lb-caption" id="lbCaption"></div>
+        </div>
+        <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#x203A;</button>
+        <div class="lb-counter" id="lbCounter"></div>
+    </div>
+
     <footer>
-        <a href="index.html" class="lien-icone">
-            <img src="images/logo.png" alt="Logo" class="logo2" >
-        </a>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <span class="logo-text">empereur tamarin</span>
+        </div>
         <div>
-            <a target="_blank" href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="lien-icone">
-                <img src="images/twitter.png" alt="Logo Twitter" >
-            </a>
             <a target="_blank" href="https://www.instagram.com/leobglt/" class="lien-icone">
-                <img src="images/instagram.png" alt="Logo Instagram" >
+                <img src="images/instagram.png" alt="Logo Instagram">
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="lien-icone">
+                <img src="images/linkedin.png" alt="Logo Linkedin">
             </a>
         </div>
     </footer>
-</body>
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         PHOTO CONFIGURATION
+         ═══════════════════════════════════════════════════════════════
+         To add photos: add an entry to the array for the right album.
+         Each entry: { src: "path/to/image.jpg", caption: "My caption" }
+
+         To add a whole new album:
+           1. Add a key here (e.g. "norway": [...])
+           2. Add a tab button in the HTML above
+           3. Add a tab panel div in the HTML above
+         ═══════════════════════════════════════════════════════════════ -->
+    <script>
+    const PHOTOS = {
+        italie: [
+            { src: "images/portfolio/Italie/paysage1 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage2 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage3 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage4 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage5 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage6 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage7 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage8 - Grande.jpeg", caption: "Near Milano" },
+            { src: "images/portfolio/Italie/paysage9 - Grande.jpeg", caption: "Near Milano" },
+        ],
+        portugal: [
+            { src: "images/portfolio/Portgual/paysage1 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage2 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage3 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage4 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage5 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage6 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage7 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage8 - Grande.jpeg", caption: "Portugal" },
+            { src: "images/portfolio/Portgual/paysage9 - Grande.jpeg", caption: "Portugal" },
+        ],
+        lago: [
+            { src: "images/portfolio/Lago/IMG_6016 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_6013 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_6015 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_6033 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_6029 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_6034 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_5892 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_5889 - Grande.jpeg", caption: "Villa Lago" },
+            { src: "images/portfolio/Lago/IMG_6022 - Grande.jpeg", caption: "Villa Lago" },
+        ],
+        tmb: [
+            { src: "images/portfolio/hiking/IMG_6472 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_6500 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_6536 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_6556 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_7051 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_7142 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_7148 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_7171 - Grande.jpeg", caption: "TMB" },
+            { src: "images/portfolio/hiking/IMG_6665 - Grande.jpeg", caption: "TMB" },
+        ],
+        // ── ADD A NEW ALBUM HERE ──────────────────────────────────────
+        // norway: [
+        //     { src: "images/portfolio/Norway/photo1.jpg", caption: "Fjord sunset" },
+        //     { src: "images/portfolio/Norway/photo2.jpg", caption: "Aurora" },
+        // ],
+    };
+
+    // ── Build grids ──────────────────────────────────────────────────
+    Object.entries(PHOTOS).forEach(([album, photos]) => {
+        const panel = document.getElementById('tab-' + album);
+        if (!panel) return;
+
+        const grid = document.createElement('div');
+        grid.className = 'photo-grid';
+        grid.dataset.album = album;
+
+        photos.forEach((photo, i) => {
+            const item = document.createElement('div');
+            item.className = 'photo-item';
+            item.dataset.index = i;
+            item.dataset.album = album;
+            item.innerHTML = `
+                <img src="${photo.src}" alt="${photo.caption}" loading="lazy">
+                <div class="photo-overlay">
+                    <span class="photo-caption">${photo.caption}</span>
+                </div>`;
+            item.addEventListener('click', () => openLightbox(album, i));
+            grid.appendChild(item);
+        });
+
+        panel.appendChild(grid);
+    });
+
+    // ── Tabs ─────────────────────────────────────────────────────────
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    // ── Subtle parallax on hero (contained) ──────────────────────────
+    const heroBg = document.getElementById('heroBg');
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        const heroH = document.getElementById('hero').offsetHeight;
+        if (y < heroH) {
+            heroBg.style.transform = `scale(1.04) translateY(${y * 0.25}px)`;
+        }
+    }, { passive: true });
+
+    // ── Lightbox ─────────────────────────────────────────────────────
+    let currentAlbum = null;
+    let currentIndex = 0;
+
+    const lightbox  = document.getElementById('lightbox');
+    const lbImage   = document.getElementById('lbImage');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbCounter = document.getElementById('lbCounter');
+
+    function openLightbox(album, index) {
+        currentAlbum = album;
+        currentIndex = index;
+        showPhoto();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function showPhoto() {
+        const photos = PHOTOS[currentAlbum];
+        const photo  = photos[currentIndex];
+        lbImage.src       = photo.src;
+        lbImage.alt       = photo.caption;
+        lbCaption.textContent = photo.caption;
+        lbCounter.textContent = `${currentIndex + 1} / ${photos.length}`;
+    }
+
+    function navigate(dir) {
+        const len = PHOTOS[currentAlbum].length;
+        currentIndex = (currentIndex + dir + len) % len;
+        lbImage.style.opacity = '0';
+        setTimeout(() => {
+            showPhoto();
+            lbImage.style.opacity = '1';
+        }, 120);
+    }
+
+    lbImage.style.transition = 'opacity 0.12s ease';
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => navigate(-1));
+    document.getElementById('lbNext').addEventListener('click', () => navigate(1));
+
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape')      closeLightbox();
+        if (e.key === 'ArrowLeft')   navigate(-1);
+        if (e.key === 'ArrowRight')  navigate(1);
+    });
+    </script>
+
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+
+</body>
 </html>
