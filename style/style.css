@@ -137,6 +137,24 @@ header .logo2 {
     background-repeat: no-repeat;
 }
 
+.project-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.project-title-row h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.project-logo-inline {
+    height: 30px;   
+    width: auto;
+    opacity: 0.8;  
+}
+
 @media screen and (max-width: 600px) {
   header nav {
     flex-direction: column;
