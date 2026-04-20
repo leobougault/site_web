@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mistrully&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* ── Fix style.css globals that break white-bg pages ── */
         main p, main li {
@@ -346,7 +347,7 @@
         .contact-items a:hover { color: #1a1a1a !important; }
 
         /* ── Responsive ── */
-        @media (max-width: 996px) {
+        @media (max-width: 600px) {
             .cv-hero {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
@@ -354,10 +355,45 @@
             }
             .cv-section { padding: 3rem 20px; }
             .cv-contact { padding: 2rem 20px; flex-direction: column; align-items: flex-start; }
-            .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
-            .timeline-date { text-align: left; }
-            .timeline-line { display: none; }
+            .timeline-item {
+                grid-template-columns: 20px 1fr;
+                gap: 1rem;
+                position: relative;
+            }
+
+            .timeline-date {
+                grid-column: 2;
+                text-align: left;
+                margin-bottom: 0.2rem;
+            }
+
+            .timeline-line {
+                grid-column: 1;
+                width: 1px;
+                background: rgba(0,0,0,0.1);
+                position: relative;
+            }
+
+            .timeline-line::before {
+                left: -4px;
+                top: 6px;
+            }
+
+            .timeline-content {
+                grid-column: 2;
+            }
+            .top-image {
+                height: 200px; /* ajuste la hauteur */
+                background-image: url("images/aerospace-12-00339-g001.png");
+                background-position: center;
+                background-size: 80%;
+            }
+
+            .edu-card-top img.uni-logo-sapienza {
+                width: 150px;
+            }
         }
+
     </style>
 </head>
 
@@ -366,7 +402,7 @@
     <header>
         <nav>
             <a href="index.html" class="lien-icone">
-                <img src="images/logo.png" alt="Logo" class="logo2" >
+                <img src="images/logo.png" alt="Logo" class="logo2">
             </a>
             <div>
                 <a href="index.html">HOME</a>
@@ -651,7 +687,7 @@
             <a target="_blank" href="https://www.instagram.com/leobglt/" class="lien-icone">
                 <img src="images/instagram.png" alt="Logo Instagram">
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="lien-icone">
+            <a target="_blank" href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="lien-icone2">
                 <img src="images/linkedin.png" alt="Logo Linkedin">
             </a>
         </div>

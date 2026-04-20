@@ -301,17 +301,21 @@ body {
 @media (max-width: 600px) {
     .photo-grid { columns: 2; }
     .gallery-wrapper { padding: 0 20px 4rem; }
-}
+    
 
-@media (max-width: 520px) {
-    .photo-grid { columns: 1; }
-    .lb-nav { display: none; }
+    .hero {
+    position: relative;
+    height: 30vh;
+    min-height: 200px;
+    overflow: hidden;    
+    }
+     
 }
 
 /* ─────────────────────────────────────────
     JUXTAPOSE OVERRIDE
 ───────────────────────────────────────── */
 .juxtapose {
-    max-width: 60%;
+    max-width: 100%;
     margin: 0 auto;
 }

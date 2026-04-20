@@ -239,27 +239,23 @@ input[type='submit'] {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .accueil-introduction {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-#video-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -200;
-  pointer-events: none;
-  object-position: center center;
-}
-
-  .logo-container .logo-text {
-    display: none;
+  #video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -200;
+    pointer-events: none;
+    object-position: center center;
   }
 
   .accueil-introduction div {
