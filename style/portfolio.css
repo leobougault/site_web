@@ -301,7 +301,7 @@ body {
 @media (max-width: 600px) {
     .photo-grid { columns: 2; }
     .gallery-wrapper { padding: 0 20px 4rem; }
-    
+
 
     .hero {
     position: relative;
@@ -309,6 +309,11 @@ body {
     min-height: 200px;
     overflow: hidden;    
     }
+
+    .juxtapose {
+    max-width: 100%;
+    margin: 0 auto;
+}
      
 }
 
@@ -316,6 +321,6 @@ body {
     JUXTAPOSE OVERRIDE
 ───────────────────────────────────────── */
 .juxtapose {
-    max-width: 100%;
+    max-width: 70%;
     margin: 0 auto;
 }
