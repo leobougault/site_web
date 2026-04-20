@@ -270,6 +270,12 @@ input[type='submit'] {
     width: 30%;
   }
 
+  .accueil-introduction .gif-en-haut-a-droite {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 15%; 
+  }
   .accueil-photos {
     padding: 20px;
   }
