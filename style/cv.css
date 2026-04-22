@@ -1,0 +1,417 @@
+/* ── Fix style.css globals that break white-bg pages ── */
+main p, main li {
+    color: #444;
+}
+main h2, main h3, main h4 {
+    color: #1a1a1a;
+}
+
+/* ── CV layout ── */
+.cv-hero {
+    padding: 6rem 80px 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.cv-hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.cv-hero-text h1 span { opacity: 0.35; }
+
+.cv-hero-text .tagline {
+    font-size: 1rem !important;
+    color: #666 !important;
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 2rem;
+}
+
+.cv-hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-cv {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid rgba(0,0,0,0.25);
+    color: #1a1a1a !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-cv:hover {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.5);
+    color: #1a1a1a !important;
+}
+
+.cv-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.stat-cell { background: #fff; padding: 1.5rem; }
+
+.stat-cell .number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+}
+
+.stat-cell .stat-label {
+    font-size: 0.75rem !important;
+    color: #aaa !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.3rem;
+}
+
+/* ── Sections ── */
+.cv-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 80px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem; }
+
+.section-label {
+    font-size: 0.7rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #ccc !important;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #1a1a1a !important;
+}
+
+/* ── Projects ── */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: rgba(0,0,0,0.08);
+}
+
+.project-card {
+    background: #fff;
+    padding: 2rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover { background: #f8f8f8; }
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: #1a1a1a;
+    transition: height 0.3s ease;
+}
+
+.project-card:hover::before { height: 100%; }
+
+.project-tag {
+    font-size: 0.65rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #bbb !important;
+    margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.project-card p {
+    font-size: 0.85rem !important;
+    color: #555 !important;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.project-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.tech-pill {
+    font-size: 0.7rem !important;
+    color: #666 !important;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+/* ── Timeline ── */
+.timeline { display: flex; flex-direction: column; }
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 160px 1px 1fr;
+    gap: 0 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.timeline-date {
+    font-size: 0.8rem !important;
+    color: #bbb !important;
+    text-align: right;
+    padding-top: 0.15rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-line {
+    background: rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: -4px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.3);
+    background: #fff;
+}
+
+.timeline-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content .org {
+    font-size: 0.8rem !important;
+    color: #aaa !important;
+    margin-bottom: 0.7rem;
+}
+
+.timeline-content p {
+    font-size: 0.85rem !important;
+    color: #555 !important;
+    line-height: 1.7;
+}
+
+/* ── Skills ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.skill-group h4 {
+    font-size: 0.7rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #bbb !important;
+    margin-bottom: 1rem;
+}
+
+.skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.skill-list li {
+    font-size: 0.9rem !important;
+    color: #444 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.skill-list li::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+/* ── Education ── */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(0,0,0,0.08);
+}
+
+.edu-card {
+    background: #fff;
+    padding: 1.75rem;
+}
+
+.edu-card-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.uni-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.edu-card .year {
+    font-size: 0.7rem !important;
+    color: #bbb !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+}
+
+.edu-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+}
+
+.edu-card .school {
+    font-size: 0.8rem !important;
+    color: #aaa !important;
+}
+
+/* ── Contact strip ── */
+.cv-contact {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 80px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cv-contact > p {
+    font-size: 0.85rem !important;
+    color: #bbb !important;
+}
+
+.contact-items { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+.contact-items a {
+    color: #666 !important;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.contact-items a:hover { color: #1a1a1a !important; }
+
+/* Bouton spécial */
+.btn-download {
+    background-color: #FFD700; /* jaune */
+    color: black;
+    font-weight: bold;
+}
+
+.btn-download:hover {
+    background-color: #e6c200;
+    transform: scale(1.05);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+/* visible */
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.download-file:active {
+    transform: scale(0.95);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .cv-hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 5rem 20px 3rem;
+    }
+    .cv-section { padding: 3rem 20px; }
+    .cv-contact { padding: 2rem 20px; flex-direction: column; align-items: flex-start; }
+    .timeline-item {
+        grid-template-columns: 20px 1fr;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .timeline-date {
+        grid-column: 2;
+        text-align: left;
+        margin-bottom: 0.2rem;
+    }
+
+    .timeline-line {
+        grid-column: 1;
+        width: 1px;
+        background: rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    .timeline-line::before {
+        left: -4px;
+        top: 6px;
+    }
+
+    .timeline-content {
+        grid-column: 2;
+    }
+    .top-image {
+        height: 200px; /* ajuste la hauteur */
+        background-image: url("images/aerospace-12-00339-g001.png");
+        background-position: center;
+        background-size: 80%;
+    }
+
+    .edu-card-top img.uni-logo-sapienza {
+        width: 150px;
+    }
+}
