@@ -346,6 +346,39 @@
 
         .contact-items a:hover { color: #1a1a1a !important; }
 
+        /* Bouton spécial */
+        .btn-download {
+            background-color: #FFD700; /* jaune */
+            color: black;
+            font-weight: bold;
+        }
+
+        .btn-download:hover {
+            background-color: #e6c200;
+            transform: scale(1.05);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            pointer-events: none;
+            font-size: 14px;
+        }
+
+        /* visible */
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* ── Responsive ── */
         @media (max-width: 600px) {
             .cv-hero {
@@ -422,7 +455,7 @@
                     <a href="#projects" class="btn-cv">Projects</a>
                     <a href="#experience" class="btn-cv">Experience</a>
                     <a href="https://www.linkedin.com/in/l%C3%A9o-bougault-aa89b7160/" class="btn-cv">Contact</a>
-                    <a href="portfolio.html" class="btn-cv">Portfolio</a>
+                    <a href="images/BOUGAULT_CV.pdf" class="btn-cv btn-download" download target="_blank">⬇ Download CV</a>
                 </div>
             </div>
             <div class="cv-hero-stats">
@@ -693,5 +726,22 @@
         </div>
     </footer>
 
+    <div id="toast" class="toast">
+    ✅ CV téléchargé
+    </div>      
+    <script>
+        const downloadBtn = document.querySelector('.btn-download');
+        const toast = document.getElementById('toast');
+
+        downloadBtn.addEventListener('click', () => {
+            // Affiche le toast
+            toast.classList.add('show');
+
+            // Cache après 2.5 secondes
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        });
+    </script>
 </body>
 </html>
