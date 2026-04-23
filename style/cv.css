@@ -406,7 +406,7 @@ main h2, main h3, main h4 {
     }
     .top-image {
         height: 200px; /* ajuste la hauteur */
-        background-image: url("images/aerospace-12-00339-g001.png");
+        background-image: url("../images/aerospace-12-00339-g001.png");
         background-position: center;
         background-size: 80%;
     }
