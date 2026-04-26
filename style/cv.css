@@ -368,6 +368,18 @@ main h2, main h3, main h4 {
     transform: scale(0.95);
 }
 
+.timeline-logo {
+    margin-top: 20px;
+    display: flex;
+}
+
+.timeline-logo img {
+    width: 60px;        /* ajuste selon ton design */
+    height: auto;
+    margin-left: auto;
+
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
     .cv-hero {
